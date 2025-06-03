@@ -1,11 +1,9 @@
 import {  IconButton, Stack, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-
 import { useCart } from "../hooks/useCart";
 import type { Product } from "../types/product";
 
-import toast from "react-hot-toast";
 
 interface IncrementDecrementButtonProps {
   product: Product;
