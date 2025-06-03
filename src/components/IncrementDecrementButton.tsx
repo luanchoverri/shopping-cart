@@ -21,10 +21,7 @@ function IncrementDecrementButton({
 
   const handleIncrement = () => {
     addToCart(product);
-    toast.success("Hello World",{
-      duration: 4000, 
-      position: 'bottom-center', 
-    });
+
   };
 
   const handleDecrement = () => {

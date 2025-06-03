@@ -100,7 +100,7 @@ function ProductCard({ product, handleAgregar, isAdded }: ProductCardProps) {
             marginLeft: 1,
             marginRight: 1,
             borderRadius: 8,
-            justifyItems: " center",
+     
           }}
         >
           {!isAdded ? (
@@ -121,11 +121,8 @@ function ProductCard({ product, handleAgregar, isAdded }: ProductCardProps) {
                 border: "0.5px solid",
                 borderColor: "rgba(202, 202, 202, 0.53)",
                 borderRadius: 8,
-
-                width: "100%", // para que ocupe mismo ancho que un botón
               }}
             >
-              {" "}
               <IncrementDecrementButton product={product} spacingParam={5} />
             </Box>
           )}
