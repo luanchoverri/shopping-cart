@@ -1,10 +1,4 @@
-import {
-  Box,
-  Card,
-  CardMedia,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardMedia, IconButton, Typography } from "@mui/material";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 import { useCart } from "../hooks/useCart";
@@ -18,7 +12,7 @@ const ellipsisSx = {
 };
 
 function ItemCart(props: CartItem) {
-  const { removeItem} = useCart();
+  const { removeItem } = useCart();
 
   const totalPrice = (props.price * props.quantity).toFixed(2);
 
@@ -26,13 +20,12 @@ function ItemCart(props: CartItem) {
     removeItem(props.id);
   };
 
-
   return (
     <Card
       elevation={0}
       sx={{
         display: "flex",
-        flexWrap: "no-wrap",
+        flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap", xl: "nowrap" }, // wrap en móviles
         p: 2,
         gap: 2,
         alignItems: "center",
@@ -50,7 +43,7 @@ function ItemCart(props: CartItem) {
           flexShrink: 0,
         }}
       />
-      <Box sx={{ flexGrow: 1, minWidth: 200 }}>
+      <Box sx={{ flexGrow: 1, minWidth: 100 }}>
         <Typography variant="subtitle1" fontWeight="bold" sx={ellipsisSx}>
           {props.title}
         </Typography>
@@ -63,9 +56,10 @@ function ItemCart(props: CartItem) {
         </Typography>
       </Box>
 
-      <IncrementDecrementButton product={props} spacingParam={3} />
+        <IncrementDecrementButton product={props} spacingParam={3} />
+
       <Box>
-        <IconButton size="small" onClick={handleDelete}>
+        <IconButton size="small" onClick={handleDelete} sx={{ flexShrink: 0 }}>
           <CloseRoundedIcon color="disabled" />
         </IconButton>
       </Box>

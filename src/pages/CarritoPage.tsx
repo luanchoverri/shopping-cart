@@ -53,7 +53,7 @@ function CarritoPage() {
         mt: 0,
         pt: 6,
         pb: { xs: 4, sm: 8 },
-        px: { xs: 0, sm: 15 }, // padding horizontal: 0 en mobile, 5 (40px) desde sm en adelante
+        px: { xs: 0, sm: 5, md:10, xl:20 }, // padding horizontal: 0 en mobile, 5 (40px) desde sm en adelante
       }}
     >
       {/* LISTA DE PRODUCTOS */}
