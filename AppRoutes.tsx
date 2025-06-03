@@ -4,14 +4,10 @@ import ComprasPage from "./src/pages/ComprasPage";
 import CarritoPage from "./src/pages/CarritoPage";
 import ResponsiveAppBar from "./src/components/ResponsiveAppBar";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
-  BrowserRouter,
-  useLocation,
+
 } from "react-router-dom";
-import EmptyCart from "./src/pages/EmptyCart";
-import { Toaster } from "react-hot-toast";
 
 function AppRoutes() {
   return (

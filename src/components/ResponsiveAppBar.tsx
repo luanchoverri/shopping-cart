@@ -2,14 +2,14 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
+
 import Button from "@mui/material/Button";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 import { useAuth } from "../hooks/useAuth";
-import { Avatar, Badge, Box, Divider } from "@mui/material";
-import { deepOrange } from "@mui/material/colors";
+import {  Badge, Box, } from "@mui/material";
+
 
 function ResponsiveAppBar() {
   const { isLoggedIn, user } = useAuth();

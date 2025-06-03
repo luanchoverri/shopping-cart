@@ -1,17 +1,4 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Container,
-  Divider,
-  Grid,
-  IconButton,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, Divider, Grid, Typography } from "@mui/material";
 import ItemCartList from "../components/ItemCartList";
 import { useCart } from "../hooks/useCart";
 import { Link } from "react-router-dom";
@@ -20,15 +7,12 @@ import EmptyCart from "./EmptyCart";
 import toast from "react-hot-toast";
 
 function CarritoPage() {
-
   const { clearCart, items, total, getTotalQuantity } = useCart();
   const cartItemsCount = getTotalQuantity();
 
   const handleCancelOrder = () => {
     clearCart();
   };
-
-  
 
   if (cartItemsCount == 0) return <EmptyCart></EmptyCart>;
 
@@ -114,7 +98,10 @@ function CarritoPage() {
               component={Link}
               to="/"
               onClick={() =>
-               toast.success( "Succesful Purchase, thank you for your purchase!", {duration:3000, position:"top-center"} )
+                toast.success(
+                  "Succesful Purchase, thank you for your purchase!",
+                  { duration: 3000, position: "top-center" }
+                )
               }
             >
               Check Out

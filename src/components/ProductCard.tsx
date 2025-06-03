@@ -4,15 +4,15 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardHeader,
+
   CardMedia,
   Chip,
   Typography,
 } from "@mui/material";
 import type { Product } from "../types/product";
-import { primaryGradient } from "../styles/gradient";
+
 import IncrementDecrementButton from "./IncrementDecrementButton";
-import { useCart } from "../hooks/useCart";
+
 
 interface ProductCardProps {
   product: Product;

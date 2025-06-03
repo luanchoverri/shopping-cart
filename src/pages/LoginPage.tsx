@@ -1,12 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import { useState } from "react";
-import type { User } from "../types/user";
 
 function LoginPage(){
 
 
   
-  const [user, setUser] = useState<User | null>(null);
+
 
 
     return (

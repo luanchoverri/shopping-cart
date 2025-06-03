@@ -1,17 +1,12 @@
 import {
   Box,
-  Button,
   Card,
   CardMedia,
   IconButton,
-  Stack,
   Typography,
 } from "@mui/material";
-import type { Product } from "../types/product";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { useState } from "react";
+
 import { useCart } from "../hooks/useCart";
 import type { CartItem } from "../types/cart";
 import IncrementDecrementButton from "./IncrementDecrementButton";
@@ -23,7 +18,7 @@ const ellipsisSx = {
 };
 
 function ItemCart(props: CartItem) {
-  const { removeItem, decrementItem, addToCart } = useCart();
+  const { removeItem} = useCart();
 
   const totalPrice = (props.price * props.quantity).toFixed(2);
 
@@ -31,13 +26,6 @@ function ItemCart(props: CartItem) {
     removeItem(props.id);
   };
 
-  const handleIncrement = () => {
-    addToCart(props);
-  };
-
-  const handleDecrement = () => {
-    decrementItem(props);
-  };
 
   return (
     <Card

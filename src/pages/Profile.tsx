@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Box,
   Card,
@@ -9,15 +9,15 @@ import {
   Button,
   Switch,
   Stack,
-  Link,
+
   capitalize,
 } from "@mui/material";
 import { useAuth } from "../hooks/useAuth";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useThemeContext } from "../context/ThemeContext";
 
 function Profile() {
-  const theme = "light";
+
 
   const { mode, toggleTheme } = useThemeContext();
   const isDarkMode = mode == "dark";

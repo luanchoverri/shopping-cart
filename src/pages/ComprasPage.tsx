@@ -1,9 +1,9 @@
 import {
-  Box,
+
   CircularProgress,
   Container,
   Grid,
-  Typography,
+
 } from "@mui/material";
 import ProductCard from "../components/ProductCard";
 import { useProducts } from "../hooks/useProducts";

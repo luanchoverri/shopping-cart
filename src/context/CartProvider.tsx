@@ -3,7 +3,7 @@ import { useReducer, type ReactNode } from "react";
 import type { Product } from "../types/product";
 import { CartContext } from "./CartContext";
 import { cartReducer } from "./CartReducer";
-import { initialCartState, type CartItem, type CartState } from "../types/cart";
+import { initialCartState, type CartItem } from "../types/cart";
 
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
