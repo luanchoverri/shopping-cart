@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import type { User } from "../types/user";
 import axios from "axios";
 import { AuthContext } from "./AuthContext";
+import toast from "react-hot-toast";
+import { capitalize } from "@mui/material";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -11,7 +13,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Inicialmente true para comprobar la sesión
 
-  // Efecto para comprobar si hay un token guardado en localStorage al cargar la app
+  // Efecto para comprobar si hay un token guardado en localStorage 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     const initSession = async () => {
@@ -49,6 +51,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         const userData = await fetchUserProfile(fetchedToken);
         setUser( userData);
 
+        toast(`Welcome back ${capitalize(userData.name.firstname)}!`, { duration: 3000, position: "top-right" });
         return true;
       } catch (error) {
         console.error("Login failed:", error);
@@ -76,9 +79,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
           email: emailParam,
           password: passwordParam,
         });
+        toast.success("Account created successfully!", { duration: 3000, position: "top-center" });
         return true;
       } catch (error) {
         console.error("Registration failed:", error);
+        toast.error("Could not create account. Try again later.", { duration: 3000, position: "top-center" });
         return false;
       } finally {
         setIsLoading(false);
@@ -111,6 +116,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     login,
     logout,
     register,
+
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

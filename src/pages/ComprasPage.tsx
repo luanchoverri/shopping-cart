@@ -23,7 +23,7 @@ function ComprasPage() {
 
   const handleAdd = (product: Product): void => {
     addToCart(product);
-    toast.success( "Succesful Purchase, thank you for your purchase!", {duration:3000, position:"top-center"} )
+    toast( `${product.title} added to cart  🛒`, {duration:2000, position:"bottom-right"} )
   };
 
   if (!products) {

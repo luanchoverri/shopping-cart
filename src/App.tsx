@@ -1,5 +1,5 @@
 import "./App.css";
-import AppRoutes from "../AppRoutes";
+import AppRoutes from "./AppRoutes";
 import { AuthProvider } from "./context/AuthProvider";
 import { CartProvider } from "./context/CartProvider";
 import { ProductProvider } from "./context/ProductProvider";

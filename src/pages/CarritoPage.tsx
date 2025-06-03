@@ -1,7 +1,7 @@
 import { Box, Button, Card, Divider, Grid, Typography } from "@mui/material";
 import ItemCartList from "../components/ItemCartList";
 import { useCart } from "../hooks/useCart";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EmptyCart from "./EmptyCart";
 
 import toast from "react-hot-toast";
@@ -9,9 +9,38 @@ import toast from "react-hot-toast";
 function CarritoPage() {
   const { clearCart, items, total, getTotalQuantity } = useCart();
   const cartItemsCount = getTotalQuantity();
+  const navigate = useNavigate();
 
   const handleCancelOrder = () => {
     clearCart();
+  };
+
+  const handleCheckOut = async () => {
+    const loadingToast = toast.loading("Processing your order...");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    toast.dismiss(loadingToast);
+    clearCart();
+
+    /*  toast.dismiss(loadingToast); // Quitás el loading
+      toast.success( "Successful Purchase! Thank you! ❤️", { duration: 3000, position: "top-center",   style: {
+      background: "#2e7d32", // verde oscuro (éxito)
+      color: "#fff",
+      fontWeight: "bold",
+      fontSize: "16px",
+      padding: "14px 20px",
+      borderRadius: "8px",
+    },
+    iconTheme: {
+      primary: "#ffffff",
+      secondary: "#2e7d32",
+    }, }) */
+    navigate("/carrito/success", {
+      state: {
+        
+        items: cartItemsCount,
+        total,
+      },
+    });
   };
 
   if (cartItemsCount == 0) return <EmptyCart></EmptyCart>;
@@ -95,14 +124,7 @@ function CarritoPage() {
               variant="contained"
               sx={{ mt: 2 }}
               className="btn-gradient"
-              component={Link}
-              to="/"
-              onClick={() =>
-                toast.success(
-                  "Succesful Purchase, thank you for your purchase!",
-                  { duration: 3000, position: "top-center" }
-                )
-              }
+              onClick={handleCheckOut}
             >
               Check Out
             </Button>
