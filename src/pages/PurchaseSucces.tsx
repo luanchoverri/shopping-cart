@@ -7,7 +7,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import { Link } from "react-router-dom";
@@ -112,7 +112,7 @@ const PurchaseSuccess = () => {
           component={Link}
           to="/"
           variant="contained"
-        
+
          
         >
           Continue Shopping
