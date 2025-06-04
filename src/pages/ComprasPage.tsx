@@ -14,7 +14,7 @@ import HeroText from "../components/HeroText";
 import toast from "react-hot-toast";
 
 function ComprasPage() {
-  const { products } = useProducts(); // asi es como accedo al array
+  const { products } = useProducts(); 
   const { addToCart, items } = useCart();
 
   const checkIsProductInCart = (productId: number): boolean => {

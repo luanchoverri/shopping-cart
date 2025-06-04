@@ -105,8 +105,8 @@ export default function AuthForm() {
     >
       <Typography variant="body2" color="textDisabled" gutterBottom>
         {" "}
-        Usuario FakeAPI: <strong>johnd</strong> — Contraseña:{" "}
-        <strong>m38rmF$</strong>{" "}
+        Usuario FakeAPI: johnd — Contraseña:{" "}
+        m38rmF${" "}
       </Typography>
       <Card
         sx={{
