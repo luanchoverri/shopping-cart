@@ -14,16 +14,32 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
-  const [mode, setMode] = useState<PaletteMode>(() => {
-    try {
-      const storedMode = localStorage.getItem('themeMode');
-      return (storedMode === 'light' || storedMode === 'dark') ? storedMode : 'dark';
-    } catch (error) {
-      console.error("Error to read themeMode from localStorage:", error);
-      return 'dark'; 
+const [mode, setMode] = useState<PaletteMode>(() => {
+  try {
+    const storedMode = localStorage.getItem('themeMode');
+    if (storedMode === 'light' || storedMode === 'dark') {
+      return storedMode;
     }
-  });
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    console.log(systemPrefersDark)
+    return systemPrefersDark ? 'dark' : 'light';
+  } catch (error) {
+    console.error("Error reading themeMode from localStorage:", error);
+    return 'dark';
+  }
+});
 
+  // Escuchar cambios en la preferencia del sistema para actualizar el tema automáticamente
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (event: MediaQueryListEvent) => {
+      setMode(event.matches ? 'dark' : 'light');
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
 
   const toggleTheme = () => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));

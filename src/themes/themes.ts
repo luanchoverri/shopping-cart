@@ -5,7 +5,7 @@ import type { PaletteMode } from "@mui/material";
 const darkPalette = {
   mode: "dark",
   primary: {
-    main: "#954cda", 
+    main: "#954cda",
     light: "#7b28c5",
     dark: "#3a125d",
     contrastText: "#FFFFFF",
@@ -60,10 +60,10 @@ const lightPalette = {
     paper: "#ffffff", 
   },
   text: {
-    primary: "#000000", 
-    secondary: "#000000", 
+    primary:"rgba(0, 0, 0, 0.87)",
+    secondary: "rgba(0, 0, 0, 0.6)",
   },
-  divider: "#000000",
+  divider: "rgba(0, 0, 0, 0.12)",
   error: {
     main: "#d32f2f",
   },
