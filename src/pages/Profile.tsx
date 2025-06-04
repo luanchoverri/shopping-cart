@@ -1,4 +1,3 @@
-
 import {
   Box,
   Card,
@@ -9,16 +8,13 @@ import {
   Button,
   Switch,
   Stack,
-
   capitalize,
 } from "@mui/material";
 import { useAuth } from "../hooks/useAuth";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useThemeContext } from "../context/ThemeContext";
 
 function Profile() {
-
-
   const { mode, toggleTheme } = useThemeContext();
   const isDarkMode = mode == "dark";
   const { user, logout } = useAuth();
@@ -61,7 +57,7 @@ function Profile() {
         />
         <CardContent>
           <Box mb={2}>
-            <Typography variant="subtitle2">Nombre completo</Typography>
+            <Typography variant="subtitle2">Full name</Typography>
             <Typography variant="body1" color="text.secondary">
               {" "}
               {user?.name.firstname} {user?.name.lastname}{" "}
@@ -87,7 +83,7 @@ function Profile() {
             </Typography>
           </Box>
           <Box>
-            <Typography variant="subtitle2">Miembro desde</Typography>
+            <Typography variant="subtitle2">Member since</Typography>
             <Typography variant="body1" color="text.secondary">
               Feb 2024
             </Typography>
@@ -107,7 +103,7 @@ function Profile() {
         <CardHeader
           title={
             <Typography variant="h6" color="text.primary">
-              Preferencias de Tema
+              Theme Preferences
             </Typography>
           }
         />
@@ -120,14 +116,18 @@ function Profile() {
             <Box display="flex" alignItems="center" gap={2}>
               <Box>
                 <Typography variant="body1" fontWeight="medium">
-                  Tema Oscuro
+                  Dark Mode
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Activa el modo oscuro para una mejor experiencia nocturna
+                  Enable dark mode for a better nighttime experience
                 </Typography>
               </Box>
             </Box>
-            <Switch checked={isDarkMode} onChange={toggleTheme} color="secondary"/>
+            <Switch
+              checked={isDarkMode}
+              onChange={toggleTheme}
+              color="secondary"
+            />
           </Box>
         </CardContent>
       </Card>
@@ -144,13 +144,13 @@ function Profile() {
         <CardHeader
           title={
             <Typography variant="h6" color="text.primary">
-              Acciones de Cuenta
+              Account Actions
             </Typography>
           }
         />
         <CardContent>
           <Stack spacing={2}>
-            <Button variant="outlined" fullWidth >
+            <Button variant="outlined" fullWidth>
               Edit Profile
             </Button>
             <Button variant="outlined" fullWidth>
@@ -164,7 +164,6 @@ function Profile() {
               variant="contained"
               fullWidth
               color="secondary"
-             
             >
               Log out
             </Button>

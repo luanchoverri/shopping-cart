@@ -4,7 +4,7 @@ import ComprasPage from "./pages/ComprasPage";
 import CarritoPage from "./pages/CarritoPage";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import { Route, Routes } from "react-router-dom";
-import PurchaseSuccess from "./pages/PurchaseSucces";
+import PurchaseSuccess from "./pages/PurchaseSuccess";
 
 function AppRoutes() {
   return (

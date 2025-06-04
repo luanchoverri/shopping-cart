@@ -41,13 +41,14 @@ const PurchaseSuccess = () => {
             mb: 2,
           }}
         >
-        <ShoppingBagIcon sx={{ fontSize: 48, color: "white" }} />
+          <ShoppingBagIcon sx={{ fontSize: 48, color: "white" }} />
         </Box>
         <Typography variant="h4" gutterBottom>
-          ¡Compra Realizada con Éxito!
+          Purchase Successful!
         </Typography>
         <Typography variant="body1">
-          Gracias por tu compra. Tu pedido ha sido procesado correctamente.
+          Thank you for your purchase. Your order has been successfully
+          processed.
         </Typography>
       </Box>
 
@@ -60,23 +61,23 @@ const PurchaseSuccess = () => {
             mb={2}
           >
             <Inventory2Icon sx={{ color: "primary.main", mr: 1 }} />
-            <Typography variant="h6">Detalles del Pedido</Typography>
+            <Typography variant="h6">Order Details</Typography>
           </Box>
 
           <Divider sx={{ mb: 2 }} />
 
           <Box display="flex" justifyContent="space-between" mb={1}>
-            <Typography color="text.secondary">Número de Pedido:</Typography>
+            <Typography color="text.secondary">Order Number:</Typography>
             <Typography>#{orderId}</Typography>
           </Box>
 
           <Box display="flex" justifyContent="space-between" mb={1}>
-            <Typography color="text.secondary">Artículos:</Typography>
-            <Typography>{items} productos</Typography>
+            <Typography color="text.secondary">Items:</Typography>
+            <Typography>{items} products</Typography>
           </Box>
 
           <Box display="flex" justifyContent="space-between">
-            <Typography color="text.secondary">Total Pagado:</Typography>
+            <Typography color="text.secondary">Total Paid:</Typography>
             <Typography>${total?.toFixed(2)}</Typography>
           </Box>
         </CardContent>
@@ -85,12 +86,12 @@ const PurchaseSuccess = () => {
       <Card elevation={3}>
         <CardContent>
           <Typography variant="subtitle1" gutterBottom>
-            ¿Qué sigue?
+            What's next?
           </Typography>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            • Recibirás un email de confirmación en breve. <br />
-            • Tu pedido será procesado en 1-2 días hábiles. <br />• Recibirás
-            información de seguimiento pronto.
+            • You will receive a confirmation email shortly. <br />
+            • Your order will be processed within 1-2 business days. <br />• You
+            will receive tracking information soon.
           </Typography>
         </CardContent>
       </Card>
@@ -105,15 +106,13 @@ const PurchaseSuccess = () => {
         }}
       >
         <Button variant="outlined" disabled>
-          Ver Mis Pedidos
+          View My Orders
         </Button>
         <Button
           className="btn-gradient"
           component={Link}
           to="/"
           variant="contained"
-
-         
         >
           Continue Shopping
         </Button>

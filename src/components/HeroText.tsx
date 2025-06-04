@@ -11,7 +11,7 @@ export default function HeroText() {
           display: "inline-block",
         }}
       >
-        Descubre Productos Increíbles
+        Discover Amazing Products
       </Typography>
 
       <Typography
@@ -20,8 +20,8 @@ export default function HeroText() {
         mt={2}
         sx={{ maxWidth: 600, mx: "auto" }}
       >
-        Explora nuestra colección cuidadosamente seleccionada de productos
-        premium diseñados para mejorar tu estilo de vida
+        Explore our carefully curated collection of premium products designed to
+        enhance your lifestyle
       </Typography>
     </Box>
   );

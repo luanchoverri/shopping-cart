@@ -2,11 +2,10 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import type { PaletteMode } from "@mui/material";
 
-// Define los colores para el tema oscuro basándonos en tu imagen
 const darkPalette = {
   mode: "dark",
   primary: {
-    main: "hsl(271, 65.70%, 57.60%)", // Morado secundario estándar
+    main: "#954cda", 
     light: "#7b28c5",
     dark: "#3a125d",
     contrastText: "#FFFFFF",
@@ -42,30 +41,29 @@ const darkPalette = {
   },
 };
 
-// Para el tema claro, simplemente definimos 'mode: "light"'
-// y Material-UI usará sus colores por defecto, incluyendo el azul primario estándar.
+
 const lightPalette = {
   primary: {
-    main: "#1976d2", // Azul primario estándar de Material-UI
+    main: "#1976d2", 
     light: "#42a5f5",
     dark: "#1565c0",
     contrastText: "#fff",
   },
   secondary: {
-    main: "#9c27b0", // Morado secundario estándar
+    main: "#9c27b0", 
     light: "#ba68c8",
     dark: "#7b1fa2",
     contrastText: "#fff",
   },
   background: {
-    default: "#f9fafb", // Fondo claro por defecto
-    paper: "#ffffff", // Fondo blanco para Card, Paper, etc.
+    default: "#f9fafb", 
+    paper: "#ffffff", 
   },
   text: {
-    primary: "rgba(0, 0, 0, 0.87)", // Texto oscuro estándar
-    secondary: "rgba(0, 0, 0, 0.6)", // Texto secundario más claro
+    primary: "#000000", 
+    secondary: "#000000", 
   },
-  divider: "rgba(0, 0, 0, 0.12)",
+  divider: "#000000",
   error: {
     main: "#d32f2f",
   },
@@ -80,31 +78,29 @@ const lightPalette = {
   },
 };
 
-// Función para crear el tema completo, incluyendo tipografía y componentes
 export const getAppTheme = (mode: PaletteMode) => {
   let theme = createTheme({
     palette: {
-      mode, // 'light' o 'dark'
+      mode, 
       ...(mode === "light" ? lightPalette : darkPalette),
     },
     typography: {
-      fontFamily: "Poppins, Roboto, sans-serif", // Asegúrate de que esta fuente esté importada en tu CSS global o HTML
-      // Puedes añadir más estilos de tipografía aquí
+      fontFamily: "Poppins, Roboto, sans-serif",
+      
     },
     components: {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: "1rem", // Bordes redondeados para botones
-            textTransform: "none", // Quita el uppercase por defecto
+            borderRadius: "1rem",
+            textTransform: "none", 
           },
         },
       },
       MuiCard: {
         styleOverrides: {
           root: {
-            borderRadius: 12, // Bordes más redondeados para Cards
-            // Sombra condicional para que el card se destaque más en el tema oscuro
+            borderRadius: 12,  
             boxShadow:
               mode === "dark"
                 ? "0px 4px 20px rgba(0, 0, 0, 0.4)"
@@ -116,8 +112,6 @@ export const getAppTheme = (mode: PaletteMode) => {
         styleOverrides: {
           root: {
             borderRadius: 0,
-
-            // Color de AppBar: el main de la paleta correspondiente
             backgroundColor:
               mode === "dark"
                 ? darkPalette.background.paper
@@ -125,11 +119,10 @@ export const getAppTheme = (mode: PaletteMode) => {
           },
         },
       },
-      // Puedes añadir más overrides para otros componentes aquí
+
     },
   });
 
-  // Esto hace que los tamaños de fuente sean responsivos automáticamente
   theme = responsiveFontSizes(theme);
 
   return theme;

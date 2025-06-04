@@ -119,7 +119,7 @@ function ProductCard({ product, handleAgregar, isAdded }: ProductCardProps) {
               sx={{
                 justifyItems: "center",
                 border: "0.5px solid",
-                borderColor: "rgba(202, 202, 202, 0.53)",
+                borderColor: "#cacaca",
                 borderRadius: 8,
               }}
             >

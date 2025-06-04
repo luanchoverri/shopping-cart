@@ -25,7 +25,7 @@ function ItemCart(props: CartItem) {
       elevation={0}
       sx={{
         display: "flex",
-        flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap", xl: "nowrap" }, // wrap en móviles
+        flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap", xl: "nowrap" }, 
         p: 2,
         gap: 2,
         alignItems: "center",
